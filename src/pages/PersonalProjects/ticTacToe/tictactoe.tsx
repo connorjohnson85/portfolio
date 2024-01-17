@@ -1,10 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import { AppBar, Box, Button, Divider, Grid, IconButton, List, Paper, Toolbar, Typography} from '@mui/material'
-import { styled } from '@mui/material/styles';
-import MenuIcon from '@mui/icons-material/Menu';
+import { AppBar, Box, Paper, Toolbar, Typography} from '@mui/material'
 import { Link } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import TicTacToeBoard from './ticTacToeBoard';
 
 
 function TicTacToe() {
@@ -18,18 +15,21 @@ function TicTacToe() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Connor's Portfolio
           </Typography>
-
         </Toolbar>
       </AppBar>
-      <Box p={2}>
+      <Box p={2} height='100%'>
         <Typography variant='h4'>
             Tic-Tac-Toe
         </Typography> 
       </Box>
-      <Box p={2}>
-        <Paper style={{height: 'full', padding: 2}}>
-
-        </Paper>
+      <Box p={2} sx={{ display: 'flex' }} flexDirection={'column'} height='100%'>
+        <Box flexGrow={1}>
+          <Paper style={{height: 'full', padding: 2}}>
+            <Box style={{height: '100%', padding: 2}}>
+              <TicTacToeBoard/>
+            </Box>
+          </Paper>
+        </Box>
       </Box>
 
     </div>

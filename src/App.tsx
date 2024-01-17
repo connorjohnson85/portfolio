@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BorderStyle, Dashboard } from '@mui/icons-material';
 import { Box, createTheme, Switch } from '@mui/material';
 import ReactDOM from 'react-dom';
-import TicTacToe from './pages/PersonalProjects/tictactoe';
+import TicTacToe from './pages/PersonalProjects/ticTacToe/tictactoe';
 
 
 function App() {
