@@ -91,21 +91,23 @@ function TicTacToeBoard() {
   }, [player1Turn])
 
   return (
-      <Box>
-        <Typography variant='h4'>
+      <Box p={2} display={'inline-flex'} flexDirection={'column'}>
+        <Typography variant='h4' marginBottom={7}>
             {player1Turn ? 'Player 1\'s turn' : 'Player 2\'s turn'}
         </Typography>
-        <Stack spacing={1}>
-            <Stack spacing={2} direction={'row'} key='row1'>
-                {row1.map((item, step) => <TicTacToePiece key={`row1${step}`} index={step} value={item === 1 ? 'x' : item === 2 ? 'o' : ' '} row={row1} setRow={setRow1} playerTurn={player1Turn} setTurn={setPlayer1Turn}/>)}
+        <Box width={'100%'}>
+            <Stack spacing={1}>
+                <Stack spacing={2} direction={'row'} key='row1'>
+                    {row1.map((item, step) => <TicTacToePiece key={`row1${step}`} index={step} value={item === 1 ? 'x' : item === 2 ? 'o' : ' '} row={row1} setRow={setRow1} playerTurn={player1Turn} setTurn={setPlayer1Turn}/>)}
+                </Stack>
+                <Stack key='row2' spacing={2} direction={'row'}>
+                    {row2.map((item, step) => <TicTacToePiece key={`row2${step}`} index={step}  value={item === 1 ? 'x' : item === 2 ? 'o' : ' '} row={row2} setRow={setRow2} playerTurn={player1Turn} setTurn={setPlayer1Turn}/>)}
+                </Stack>
+                <Stack key='row3' spacing={2} direction={'row'}>
+                    {row3.map((item, step) => <TicTacToePiece key={`row3${step}`} index={step}  value={item === 1 ? 'x' : item === 2 ? 'o' : ' '} row={row3} setRow={setRow3} playerTurn={player1Turn} setTurn={setPlayer1Turn}/> )}
+                </Stack>
             </Stack>
-            <Stack key='row2' spacing={2} direction={'row'}>
-                {row2.map((item, step) => <TicTacToePiece key={`row2${step}`} index={step}  value={item === 1 ? 'x' : item === 2 ? 'o' : ' '} row={row2} setRow={setRow2} playerTurn={player1Turn} setTurn={setPlayer1Turn}/>)}
-            </Stack>
-            <Stack key='row3' spacing={2} direction={'row'}>
-                {row3.map((item, step) => <TicTacToePiece key={`row3${step}`} index={step}  value={item === 1 ? 'x' : item === 2 ? 'o' : ' '} row={row3} setRow={setRow3} playerTurn={player1Turn} setTurn={setPlayer1Turn}/> )}
-            </Stack>
-        </Stack>
+        </Box>
       </Box>
   );
 }
