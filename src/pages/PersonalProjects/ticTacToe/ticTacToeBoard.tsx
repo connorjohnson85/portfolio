@@ -96,23 +96,23 @@ function TicTacToeBoard() {
             {player1Turn ? 'Player 1\'s turn' : 'Player 2\'s turn'}
         </Typography>
         <Stack spacing={1}>
-            <Stack spacing={2} direction={'row'}>
-                {row1.map((item, step) => <TicTacToePiece identity={`row1${step}`} index={step} value={item === 1 ? 'x' : item === 2 ? 'o' : ' '} row={row1} setRow={setRow1} playerTurn={player1Turn} setTurn={setPlayer1Turn}/>)}
+            <Stack spacing={2} direction={'row'} key='row1'>
+                {row1.map((item, step) => <TicTacToePiece key={`row1${step}`} index={step} value={item === 1 ? 'x' : item === 2 ? 'o' : ' '} row={row1} setRow={setRow1} playerTurn={player1Turn} setTurn={setPlayer1Turn}/>)}
             </Stack>
-            <Stack spacing={2} direction={'row'}>
-                {row2.map((item, step) => <TicTacToePiece identity={`row2${step}`} index={step}  value={item === 1 ? 'x' : item === 2 ? 'o' : ' '} row={row2} setRow={setRow2} playerTurn={player1Turn} setTurn={setPlayer1Turn}/>)}
+            <Stack key='row2' spacing={2} direction={'row'}>
+                {row2.map((item, step) => <TicTacToePiece key={`row2${step}`} index={step}  value={item === 1 ? 'x' : item === 2 ? 'o' : ' '} row={row2} setRow={setRow2} playerTurn={player1Turn} setTurn={setPlayer1Turn}/>)}
             </Stack>
-            <Stack spacing={2} direction={'row'}>
-                {row3.map((item, step) => <TicTacToePiece identity={`row3${step}`} index={step}  value={item === 1 ? 'x' : item === 2 ? 'o' : ' '} row={row3} setRow={setRow3} playerTurn={player1Turn} setTurn={setPlayer1Turn}/> )}
+            <Stack key='row3' spacing={2} direction={'row'}>
+                {row3.map((item, step) => <TicTacToePiece key={`row3${step}`} index={step}  value={item === 1 ? 'x' : item === 2 ? 'o' : ' '} row={row3} setRow={setRow3} playerTurn={player1Turn} setTurn={setPlayer1Turn}/> )}
             </Stack>
         </Stack>
       </Box>
   );
 }
 
-const TicTacToePiece = ({ value, identity, setRow, index, row, playerTurn, setTurn }: { value: string, identity: string, row: number[], index: number, setRow: (newValue: number[]) => void, playerTurn: boolean, setTurn: (newValue: boolean) => void}) => <>
-    <Item key={identity}>
-        <Button onClick={() => {
+const TicTacToePiece = ({ value, setRow, index, row, playerTurn, setTurn }: { value: string, row: number[], index: number, setRow: (newValue: number[]) => void, playerTurn: boolean, setTurn: (newValue: boolean) => void}) => <>
+    <Item>
+        <Button sx={{height: '100%'}}onClick={() => {
             if (value === ' ') {
                 if(playerTurn) {
                     let newArray = row
