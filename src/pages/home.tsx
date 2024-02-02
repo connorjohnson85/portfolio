@@ -26,9 +26,13 @@ function Home() {
                 <Box sx={{ display: 'flex' }}>
                   <Box px={2} width={'100%'}>Professional Projects</Box>
                 </Box>
+                
               </Box>
               <Divider/>
-              <List></List>
+              <List>
+                <Link to={`/DemoForm`}>
+                  Demo Form
+                </Link></List>
             </Paper>
           </Box>
           <Box width={'100%'} marginLeft={2} marginRight={1}>

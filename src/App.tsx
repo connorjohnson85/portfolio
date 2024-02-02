@@ -12,6 +12,7 @@ import { BorderStyle, Dashboard } from '@mui/icons-material';
 import { Box, createTheme, Switch } from '@mui/material';
 import ReactDOM from 'react-dom';
 import TicTacToe from './pages/PersonalProjects/ticTacToe/tictactoe';
+import DemoForm from './pages/ProfessionalProjects/DemoForm';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       	<BrowserRouter>
         <Routes>
           <Route path="/Tictactoe" element={<TicTacToe />} />
+          <Route path="/DemoForm" element={<DemoForm />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>
